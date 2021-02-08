@@ -24,9 +24,9 @@ let quiz = [
           Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")]
 
      var qnnum = 0
-     //var correct = 0
+    var correct = 0
     mutating func getQuestionText()->String   {
-      if(qnnum < quiz.count-1)
+      if(qnnum < quiz.count-1 )
 
       {
         var  s = qnnum
@@ -37,6 +37,7 @@ let quiz = [
     else
     {
         qnnum = 0
+        correct = 0
         return quiz[qnnum].text
     }
     
@@ -47,7 +48,7 @@ let quiz = [
         let actualans = quiz[qnnum].ans
         if userAns == actualans
         {
-            
+            correct += 1
             return true
         }
         else
